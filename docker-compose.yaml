@@ -12,10 +12,15 @@ services:
       - 3396:3306
     volumes:
       - ./dbsql:/var/lib/mysql
-  # phpDb:
-  #   image: phpmyadmin:5.2
-  #   restart: always
-  #   environment:
-  #     - PMA_ARBITRARY=1
-  #   ports:
-  #     - 8080:80
+  phpDb:
+    image: phpmyadmin:5.2
+    restart: always
+    # environment:
+    #   - PMA_ARBITRARY=1
+    environment:
+      - PMA_HOST=db
+      - PMA_PORT=3306
+      # - PMA_USER=root
+      # - PMA_PASSWORD=admin
+    ports:
+      - 8080:80
