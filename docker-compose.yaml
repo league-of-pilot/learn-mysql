@@ -20,7 +20,7 @@ services:
     environment:
       - PMA_HOST=db
       - PMA_PORT=3306
-      # - PMA_USER=root
-      # - PMA_PASSWORD=admin
+      - PMA_USER=root
+      - PMA_PASSWORD=admin
     ports:
-      - 8080:80
+      - 8089:80

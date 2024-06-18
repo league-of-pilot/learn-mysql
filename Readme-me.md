@@ -30,3 +30,11 @@ docker run -d -e PMA_ARBITRARY=1 -p 8080:80 phpmyadmin:5.2
 ```
 
 ## Intro mySQL
+
+https://www.w3schools.com/mysql/mysql_datatypes.asp
+
+```sql
+drop database if exist insta;
+create database insta;
+use insta;
+```
