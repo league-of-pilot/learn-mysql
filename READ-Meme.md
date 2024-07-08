@@ -28,3 +28,11 @@ yarn prisma studio
 ```
 
 Dùng studio tạo 1 record trước
+
+# Update schema
+
+-> phải chạy push hoặc migrate lại
+
+```bash
+yarn prisma db push
+```

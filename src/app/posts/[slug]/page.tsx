@@ -2,13 +2,13 @@ import { prisma } from '@/prismaClient/db'
 
 type TPostPage = {
   params: {
-    id: string
+    slug: string
   }
 }
 export default async function PostPage({ params }: TPostPage) {
   const post = await prisma.post.findUnique({
     where: {
-      id: params.id
+      slug: params.slug
     }
   })
 
