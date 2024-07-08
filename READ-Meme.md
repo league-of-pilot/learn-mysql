@@ -16,11 +16,15 @@ Có thể phải cài plugin Prisma -> đôi lúc phải setting VsCode format f
 https://www.prisma.io/docs/orm/reference/prisma-cli-reference#db-push
 https://www.prisma.io/docs/orm/prisma-migrate/workflows/prototyping-your-schema
 
-Tạo 1st schema
+Tạo 1st schema, theo quide thì phải manual install prisma-client
+Clip youtube thì prisma push sẽ tự cài luôn
 
 ```bash
+yarn add @prisma/client
 npx prisma migrate dev --name init
-
+yarn prisma studio
 
 
 ```
+
+Dùng studio tạo 1 record trước
