@@ -10,3 +10,17 @@ yarn add -D prettier prisma
 npx prisma init --datasource-provider sqlite
 
 ```
+
+Có thể phải cài plugin Prisma -> đôi lúc phải setting VsCode format file `.prisma` dùng extension
+
+https://www.prisma.io/docs/orm/reference/prisma-cli-reference#db-push
+https://www.prisma.io/docs/orm/prisma-migrate/workflows/prototyping-your-schema
+
+Tạo 1st schema
+
+```bash
+npx prisma migrate dev --name init
+
+
+
+```
