@@ -15,6 +15,8 @@ export async function createPost(formData: FormData) {
   })
 
   revalidatePath('/posts')
+  // TODO reset form input after submit
+  // TODO validate 2 level - realtime and when submit ?
 }
 
 export async function deletePost(id: string) {

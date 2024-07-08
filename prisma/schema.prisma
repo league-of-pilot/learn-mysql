@@ -25,4 +25,13 @@ model Post {
   createdAt DateTime @default(now()) @map("created_at")
   // prisma studio will still show createdAt
   // only when access db will use created_at
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  String
+}
+
+model User {
+  id             String @id @default(cuid())
+  email          String
+  hashedPassword String
+  posts          Post[]
 }
