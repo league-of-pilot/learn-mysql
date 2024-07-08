@@ -27,11 +27,26 @@ model Post {
   // only when access db will use created_at
   author    User     @relation(fields: [authorId], references: [id])
   authorId  String
+
+  // Hiện ko thể 1 post nhiều user được mà phải có 1 bảng trung gian ?
+  Collaborator Collaborator[]
 }
 
 model User {
-  id             String @id @default(cuid())
+  id             String         @id @default(cuid())
   email          String
   hashedPassword String
   posts          Post[]
+  Collaborator   Collaborator[]
+}
+
+// many - to - many
+// mention cũng similar, phải tạo 1 table trung gian, ko giống noSQL
+model Collaborator {
+  post   Post   @relation(fields: [postId], references: [id])
+  postId String
+  user   User   @relation(fields: [userId], references: [id])
+  userId String
+
+  @@id([postId, userId])
 }
